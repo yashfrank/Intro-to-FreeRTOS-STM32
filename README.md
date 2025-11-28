@@ -31,6 +31,20 @@ You will need a USB to Serial TTL converter to see the output. Connect the conve
 *   Converter **TX** ↔ Board **PA3 (RX)**
 *   Converter **GND** ↔ Board **GND**
 
+#### Putty Setup: (For Serial Connection you can use any serial monitor software, here i am using putty)
+1.    You will need to check which com-port USB to serial is connected using device manager.
+2.    Open Putty app > Click on `session` > Serial line: `COM9`; Speed: `4800` (Baud-rate); Connection type: `Serial`
+3.    Click on `Terminal` > Line Dicipline Option:Local Echo: `Force on`; Local Line Editing: `Force on`
+4.    Click on `Connection` > `Serial` > Data bits: `8`; Stop bits: `1`; Parity: `None`; Flow control:`None`
+
+**Putty Issue you might face:**
+1. You are getting garbage output on putty screen.
+> _Solution_: refer Pt. #2 From Putty Setup.
+2. You are able to see messages coming from board but you are not able to Enter message or message you are entering is not seen on display.
+> _Solution_: refer Pt. #3 From Putty Setup.
+3. You are Entering message, its displaying on screen as well, but board its not responding.
+> _Solution_: refer Pt. #4 From Putty Setup.
+
 ### Key Difference from the Tutorial
 
 It is important to note that the original tutorial series uses an **ESP32** board. This repository adapts and implements the concepts on an **STM32F407** board, with configurable `STM32FreeRTOSConfig.h` file for STM32. This may result in differences in hardware initialization, peripheral configuration, and toolchain setup.
